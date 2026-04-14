@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Copy the niri.kdl from the current theme to the niri config directory, so that niri can pick up theme changes.
+CONFIG_PATH="$HOME/.config/niri"
+THEME_PATH="$HOME/.config/omari/current/theme"
+
+# Create the niri config directory if it doesn't exist
+mkdir -p "$CONFIG_PATH"
+
+# Copy the niri.kdl from the current theme to the niri config directory
+cp "$THEME_PATH/niri.kdl" "$CONFIG_PATH/theme.kdl"

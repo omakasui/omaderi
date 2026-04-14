@@ -1,0 +1,11 @@
+spawn-sh-at-startup "uwsm-app -- waybar"
+spawn-sh-at-startup "uwsm-app -- mako"
+spawn-sh-at-startup "uwsm-app -- fcitx5 --disable notificationitem"
+spawn-sh-at-startup "uwsm-app -- swaybg -i ~/.config/omari/current/background -m fill"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "omari-first-run"
+
+// Skip the hotkey overlay at startup.
+hotkey-overlay {
+    skip-at-startup
+}

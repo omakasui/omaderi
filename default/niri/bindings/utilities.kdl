@@ -1,0 +1,31 @@
+binds {
+  // Menus
+  Mod+K { show-hotkey-overlay; }
+  Mod+Space hotkey-overlay-title="Launch apps" { spawn "omari-launch-walker"; }
+  Mod+Alt+Space hotkey-overlay-title="Omari menu" { spawn "omari-menu"; }
+  Mod+Escape hotkey-overlay-title="System menu" { spawn-sh "omari-menu system"; }
+  XF86PowerOff hotkey-overlay-title="Power menu" { spawn-sh "omari-menu system"; }
+
+  // Aethestics
+  Mod+Shift+Space hotkey-overlay-title="Toggle top bar" { spawn "omari-toggle-waybar"; }
+  Mod+Ctrl+Space hotkey-overlay-title="Theme background menu" { spawn-sh "omari-menu background"; }
+  Mod+Shift+Ctrl+Space hotkey-overlay-title="Theme menu" { spawn-sh "omari-menu theme"; }
+
+  // Notifications
+  Mod+Comma hotkey-overlay-title="Dismiss last notification" { spawn-sh "makoctl dismiss"; }
+  Mod+Shift+Comma hotkey-overlay-title="Dismiss all notifications" { spawn-sh "makoctl dismiss --all"; }
+  Mod+Ctrl+Comma hotkey-overlay-title="Toggle silencing notifications" { spawn "omari-toggle-notification-silencing"; }
+  Mod+Alt+Comma hotkey-overlay-title="Invoke last notification" { spawn-sh "makoctl invoke"; }
+  Mod+Shift+Alt+Comma hotkey-overlay-title="Restore last notification" { spawn-sh "makoctl restore"; }
+
+  // Lockscreen
+  Super+Ctrl+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
+
+  // Captures
+  Print { screenshot; }
+  Ctrl+Print { screenshot-screen; }
+  Alt+Print { screenshot-window; }
+
+  // Overview
+  Mod+O repeat=false { toggle-overview; }
+}

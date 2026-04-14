@@ -1,0 +1,20 @@
+// This config is in the KDL format: https://kdl.dev
+// Check the wiki for a full description of the configuration:
+// https://niri-wm.github.io/niri/Configuration:-Introduction
+
+// This is the main niri configuration files.
+// Default are copied from the default configuration.
+// You want to leave the default configuration as is and only override the nodes you want to change.
+include "default/autostart.kdl"
+include "default/bindings/media.kdl"
+include "default/bindings/tiling.kdl"
+include "default/bindings/utilities.kdl"
+include "default/envs.kdl"
+include "default/looknfeel.kdl"
+include "default/input.kdl"
+include "default/window.kdl"
+include "theme.kdl"
+
+include "output.kdl"
+include "input.kdl"
+include "bindings.kdl"

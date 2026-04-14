@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Install one of the supported fonts. Usually called via Install > Fonts > * in the Omari Menu.
+
+if [[ -z $1 ]]; then
+  echo "Usage: omari-install-font <font>" >&2
+  exit 1
+fi
+
+mkdir -p ~/.local/share/fonts
+
+case "$1" in
+jetbrains-mono)
+  omari-pkg-add fonts-jetbrains-mono
+  ;;
+iafonts)
+  omari-pkg-add fonts-ia-writer-mono
+  ;;
+cascadia-mono)
+  omari-pkg-add fonts-cascadia-mono-nf
+  ;;
+mscore)
+  omari-pkg-add ttf-mscorefonts-installer
+  ;;
+*)
+  echo "Usage: omari-install-font <font>" >&2
+  exit 1
+  ;;
+esac
+
+fc-cache

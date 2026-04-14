@@ -1,0 +1,28 @@
+// https://niri-wm.github.io/niri/Configuration%3A-Input.html
+input {
+    //
+    keyboard {
+        xkb {
+            // Put your XKB options here
+            // Leave it empty to use the default options, which are a good starting point for most users.
+        }
+
+        // Enable numlock on startup, omitting this setting disables it.
+        numlock
+    }
+
+    touchpad {
+        tap
+    }
+
+    mouse {
+
+    }
+
+    trackpoint {
+
+    }
+
+    // Enable focus follows mouse, which focuses windows when the mouse cursor enters them.
+    focus-follows-mouse max-scroll-amount="0%"
+}

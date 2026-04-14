@@ -1,0 +1,17 @@
+#!/bin/bash
+
+set -e
+
+echo -e "\e[32m\nUpdate Niri configuration\e[0m"
+
+DEFAULT_PATH="$OMARI_PATH/default"
+CONFIG_PATH="$HOME/.config/niri"
+
+# Create the niri config directory if it doesn't exist
+mkdir -p "$CONFIG_PATH"
+
+# Copy the default niri configuration files to the niri config directory
+cp -R "$DEFAULT_PATH/niri/"* "$CONFIG_PATH/default/"
+
+echo "Updated."
+

@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Set the Omari channel, which dictates what git branch is used.
+#
+# Stable uses the main branch, which only sees updates on official releases.
+#
+# Dev tracks the active development dev branch, which may include partial or broken updates.
+# This should only be used by Omari developers and people with a lot of experience managing
+# Linux systems.
+
+if (($# == 0)); then
+  echo "Usage: omari-channel-set [stable|dev]"
+  exit 1
+else
+  channel="$1"
+fi
+
+case "$channel" in
+"stable") omari-branch-set "main" && omari-refresh-apt "stable" ;;
+"dev") omari-branch-set "dev" && omari-refresh-apt "dev" ;;
+*) echo "Unknown channel: $channel"; exit 1; ;;
+esac

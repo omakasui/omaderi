@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+# Reinstall all default Omari packages from the stable channel and downgrade any packages that are too new.
+
+# Ensure all packages are installed
+mapfile -t packages < <(grep -v '^#' "$OMARI_PATH/install/omari-base.packages" | grep -v '^$')
+omari-pkg-add "${packages[@]}"

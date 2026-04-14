@@ -1,0 +1,23 @@
+# Editor used by CLI
+export EDITOR="nvim"
+export SUDO_EDITOR="$EDITOR"
+
+# Fix BAT theme
+export BAT_THEME=ansi
+
+# Fix Alacritty cursor display issues
+export XCURSOR_THEME="Yaru"
+
+# Terminal
+export TERMINAL=xdg-terminal-exec
+
+# Gum
+export GUM_CONFIRM_PROMPT_FOREGROUND=6       # Cyan
+export GUM_CONFIRM_SELECTED_FOREGROUND=0     # Black
+export GUM_CONFIRM_SELECTED_BACKGROUND=2     # Green
+export GUM_CONFIRM_UNSELECTED_FOREGROUND=7   # White
+export GUM_CONFIRM_UNSELECTED_BACKGROUND=8   # Dark grey
+
+# Omari
+export OMARI_PATH=$HOME/.local/share/omari
+export PATH=$OMARI_PATH/bin:$PATH:$HOME/.local/bin

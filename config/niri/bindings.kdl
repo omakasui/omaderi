@@ -1,0 +1,7 @@
+binds {
+    // Apps
+    Super+Return hotkey-overlay-title="Open Terminal" { spawn-sh "uwsm-app -- xdg-terminal-exec"; }
+    Super+Shift+Return hotkey-overlay-title="Open Browser" { spawn "omari-launch-browser"; }
+    Super+Shift+B hotkey-overlay-title="Open Browser" { spawn "omari-launch-browser"; }
+    Super+Shift+F hotkey-overlay-title="Open File Manager" { spawn-sh "uwsm-app -- nautilus --new-window"; }
+}

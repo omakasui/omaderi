@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Update all installed Omari themes by pulling the latest changes from their git repositories.
+
+omari-refresh-theme
+
+for dir in ~/.config/omari/themes/*/; do
+  if [[ -d $dir ]] && [[ ! -L ${dir%/} ]] && [[ -d $dir/.git ]]; then
+    echo "Updating: $(basename "$dir")"
+    git -C "$dir" pull
+  fi
+done

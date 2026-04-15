@@ -60,6 +60,7 @@ libusb-0.1-4
 localsend
 lsb-release
 
+mate-polkit
 mako-notifier
 mesa-vulkan-drivers
 mesa-va-drivers

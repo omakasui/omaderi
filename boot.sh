@@ -34,12 +34,11 @@ git fetch origin "${OMARI_REF}" && git checkout "${OMARI_REF}"
 cd -
 
 # Set channel based on branch (dev branch uses dev channel, everything else uses stable)
-# if [[ $OMARI_REF == "dev" ]]; then
-#   export OMARI_CHANNEL=dev
-# else
-#   export OMARI_CHANNEL=stable
-# fi
-export OMARI_CHANNEL=dev
+if [[ $OMARI_REF == "dev" ]]; then
+  export OMARI_CHANNEL=dev
+else
+  export OMARI_CHANNEL=stable
+fi
 
 echo -e "\nInstallation starting..."
 source ~/.local/share/omari/install.sh

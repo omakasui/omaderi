@@ -72,6 +72,9 @@ mupdf-tools
 ninja-build
 niri
 
+omari-nvim
+omari-walker
+
 pamixer
 pavucontrol
 pipewire

@@ -55,7 +55,6 @@ omari-restart-mako
 omari-restart-zellij
 
 # Change app specific themes
-omari-theme-set-niri
 omari-theme-set-gnome
 omari-theme-set-vscode
 omari-theme-set-obsidian

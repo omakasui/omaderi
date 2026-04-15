@@ -8,7 +8,6 @@ exec > >(tee "/tmp/omari-update.log") 2>&1
 
 omari-update-keyring
 omari-update-system-pkgs
-omari-update-niri
 omari-migrate
 omari-hook post-update
 omari-update-restart

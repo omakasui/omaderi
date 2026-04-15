@@ -5,15 +5,15 @@
 // This is the main niri configuration files.
 // Default are copied from the default configuration.
 // You want to leave the default configuration as is and only override the nodes you want to change.
-include "default/autostart.kdl"
-include "default/bindings/media.kdl"
-include "default/bindings/tiling.kdl"
-include "default/bindings/utilities.kdl"
-include "default/envs.kdl"
-include "default/looknfeel.kdl"
-include "default/input.kdl"
-include "default/window.kdl"
-include "theme.kdl"
+include "../../.local/share/omari/default/autostart.kdl"
+include "../../.local/share/omari/default/bindings/media.kdl"
+include "../../.local/share/omari/default/bindings/tiling.kdl"
+include "../../.local/share/omari/default/bindings/utilities.kdl"
+include "../../.local/share/omari/default/envs.kdl"
+include "../../.local/share/omari/default/looknfeel.kdl"
+include "../../.local/share/omari/default/input.kdl"
+include "../../.local/share/omari/default/window.kdl"
+include "../omari/current/theme/niri.kdl"
 
 include "output.kdl"
 include "input.kdl"

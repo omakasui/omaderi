@@ -6,8 +6,8 @@ spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
 spawn-at-startup "omari-first-run"
 
 // Slow app launch fix -- set systemd vars
-spawn-sh-at-startup "systemctl --user import-environment $(env | cut -d'=' -f 1)"
-spawn-sh-at-startup "dbus-update-activation-environment --systemd --all"
+// spawn-sh-at-startup "systemctl --user import-environment DISPLAY XAUTHORITY WAYLAND_DISPLAY WAYLAND_SOCKET WAYLAND_DEBUG GPG_AGENT_INFO SSH_AUTH_SOCK"
+// spawn-sh-at-startup "dbus-update-activation-environment --systemd --all"
 
 // Skip the hotkey overlay at startup.
 hotkey-overlay {

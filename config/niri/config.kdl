@@ -2,9 +2,7 @@
 // Check the wiki for a full description of the configuration:
 // https://niri-wm.github.io/niri/Configuration:-Introduction
 
-// This is the main niri configuration files.
-// Default are copied from the default configuration.
-// You want to leave the default configuration as is and only override the nodes you want to change.
+// Use defaults Omari defaults (but don't edit these directly!)
 include "../../.local/share/omari/default/niri/autostart.kdl"
 include "../../.local/share/omari/default/niri/bindings/media.kdl"
 include "../../.local/share/omari/default/niri/bindings/tiling.kdl"
@@ -15,6 +13,9 @@ include "../../.local/share/omari/default/niri/input.kdl"
 include "../../.local/share/omari/default/niri/window.kdl"
 include "../omari/current/theme/niri.kdl"
 
+// Change your own setup in these files (and overwrite any settings from defaults!)
 include "output.kdl"
 include "input.kdl"
 include "bindings.kdl"
+
+// Add any other personal Niri configuration below

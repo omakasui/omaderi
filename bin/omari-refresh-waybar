@@ -3,5 +3,10 @@
 # Overwrite the user configs for the Waybar menu bar with the Omari defaults and restart the service.
 
 omari-refresh-config waybar/config.jsonc
-#omari-refresh-config waybar/style.css
+omari-refresh-config waybar/style.css
+
+# Mask system-provided waybar.service: niri manages waybar via autostart.kdl.
+# Debian enables it globally so --user disable is insufficient; masking takes precedence.
+systemctl --user mask --now waybar.service
+
 omari-restart-waybar

@@ -7,7 +7,3 @@ omari-refresh-config niri/config.kdl
 omari-refresh-config niri/input.kdl
 omari-refresh-config niri/output.kdl
 omari-refresh-config niri/bindings.kdl
-
-# Mask system-provided waybar.service: niri manages waybar via autostart.kdl.
-# Debian enables it globally so --user disable is insufficient; masking takes precedence.
-systemctl --user mask --now waybar.service

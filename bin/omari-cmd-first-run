@@ -11,6 +11,7 @@ if [[ -f $FIRST_RUN_MODE ]]; then
   bash "$OMARI_PATH/install/first-run/firewall.sh"
   bash "$OMARI_PATH/install/first-run/gnome-theme.sh"
   bash "$OMARI_PATH/install/first-run/elephant.sh"
+  bash "$OMARI_PATH/install/first-run/waybar.sh"
   sudo rm -f /etc/sudoers.d/first-run
 
   bash "$OMARI_PATH/install/first-run/welcome.sh"

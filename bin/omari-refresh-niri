@@ -7,3 +7,8 @@ omari-refresh-config niri/config.kdl
 omari-refresh-config niri/input.kdl
 omari-refresh-config niri/output.kdl
 omari-refresh-config niri/bindings.kdl
+
+# Disable system-provided waybar.service: niri manages waybar via autostart.kdl
+if systemctl --user is-enabled waybar.service &>/dev/null; then
+  systemctl --user disable --now waybar.service
+fi

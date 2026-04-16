@@ -65,12 +65,17 @@ layout {
     }
 }
 
-// Make the wallpaper stationary, rather than moving with workspaces.
-layer-rule {
-    // This is for swaybg; change for other wallpaper tools.
-    // Find the right namespace by running niri msg layers.
-    match namespace="^wallpaper$"
-    place-within-backdrop true
+overview {
+    backdrop-color "#1e1e2e"
+
+    workspace-shadow {
+        softness 40
+        spread 10
+        offset x=0 y=10
+        color "#00000050"
+    }
+
+    zoom 0.5
 }
 
 // Animation settings.

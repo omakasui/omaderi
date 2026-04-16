@@ -76,9 +76,10 @@ omari-nvim
 omari-walker
 
 pamixer
-pavucontrol
 pipewire
 pipewire-audio
+pipewire-pulse
+pipewire-alsa
 pkg-config
 playerctl
 plocate
@@ -86,7 +87,6 @@ plymouth
 plymouth-themes
 polkitd
 printer-driver-cups-pdf
-pulsemixer
 
 rfkill
 ripgrep
@@ -107,6 +107,13 @@ ufw-docker
 unzip
 uwsm
 
+waybar
+wget
+wf-recorder
+wiremix
+wireplumber
+wl-clipboard
+
 xdg-user-dirs
 xdg-desktop-portal
 xdg-desktop-portal-gtk
@@ -115,11 +122,5 @@ xwayland
 
 yaru-theme-gtk
 yaru-theme-icon
-
-waybar
-wget
-wf-recorder
-wireplumber
-wl-clipboard
 
 zoxide

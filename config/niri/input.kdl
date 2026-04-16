@@ -2,6 +2,24 @@
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Inputs
 
-// Remember to uncomment the node by removing "/-"!
-/-input {
+input {
+    //
+    keyboard {
+        xkb {
+            // Put your XKB options here
+            // Leave it empty to use the default options, which are a good starting point for most users.
+        }
+    }
+
+    touchpad {
+        //
+    }
+
+    mouse {
+        //
+    }
+
+    trackpoint {
+        //
+    }
 }

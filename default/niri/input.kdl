@@ -3,8 +3,7 @@ input {
     //
     keyboard {
         xkb {
-            // Put your XKB options here
-            // Leave it empty to use the default options, which are a good starting point for most users.
+            // Leave it empty to use the default options
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -13,14 +12,15 @@ input {
 
     touchpad {
         tap
+        // Put your touchpad settings here
     }
 
     mouse {
-
+        // Put your mouse settings here
     }
 
     trackpoint {
-
+        // Put your trackpoint settings here
     }
 
     // Enable focus follows mouse, which focuses windows when the mouse cursor enters them.

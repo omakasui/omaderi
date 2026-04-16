@@ -71,6 +71,7 @@ layer-rule {
     place-within-backdrop true
 }
 
+// Enhance the overview with shadows behind windows.
 overview {
     workspace-shadow {
         softness 40
@@ -82,11 +83,5 @@ overview {
     zoom 0.5
 }
 
-// Animation settings.
-// The wiki explains how to configure individual animations:
-// https://niri-wm.github.io/niri/Configuration:-Animations
-animations {
-
-}
-
+// Use default window decorations.
 prefer-no-csd

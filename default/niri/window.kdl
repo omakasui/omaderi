@@ -3,10 +3,8 @@ window-rule {
     draw-border-with-background false
 }
 
-// You can change the path where screenshots are saved.
-// A ~ at the front will be expanded to the home directory.
-// The path is formatted with strftime(3) to give you the screenshot date and time.
+// The screenshot-path option specifies where screenshots taken with the "Take Screenshot" action in the hotkey overlay are saved. You can use strftime format specifiers to include the date and time in the filename.
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
-// You can also set this to null to disable saving screenshots to disk.
+// It's also possible to specify a custom command to run when taking a screenshot. The command will receive the screenshot path as an argument, and the screenshot will be saved at that path after the command is executed. This allows you to, for example, copy the screenshot to the clipboard instead of saving it to disk.
 // screenshot-path null

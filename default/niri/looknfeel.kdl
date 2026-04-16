@@ -17,6 +17,8 @@ layout {
     // You can change the default width of the new windows.
     default-column-width { proportion 0.5; }
 
+    background-color "transparent"
+
     // You can change how the focus ring looks.
     focus-ring {
         off
@@ -61,6 +63,14 @@ layout {
         top 8
         bottom 8
     }
+}
+
+// Make the wallpaper stationary, rather than moving with workspaces.
+layer-rule {
+    // This is for swaybg; change for other wallpaper tools.
+    // Find the right namespace by running niri msg layers.
+    match namespace="^wallpaper$"
+    place-within-backdrop true
 }
 
 // Animation settings.

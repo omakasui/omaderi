@@ -65,9 +65,13 @@ layout {
     }
 }
 
-overview {
-    backdrop-color "#1e1e2e"
+// Put swaybg with namespace "backdrop" inside the overview.
+layer-rule {
+    match namespace="^backdrop$"
+    place-within-backdrop true
+}
 
+overview {
     workspace-shadow {
         softness 40
         spread 10

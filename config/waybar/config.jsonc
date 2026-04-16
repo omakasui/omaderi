@@ -28,7 +28,7 @@
   "custom/update": {
     "format": "",
     "exec": "omari-update-available",
-    "on-click": "omari-launch-terminal-with-presentation omari-update",
+    "on-click": "omari-launch-floating-terminal-with-presentation omari-update",
     "tooltip-format": "Omari update available",
     "signal": 7,
     "interval": 21600,

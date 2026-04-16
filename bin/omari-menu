@@ -50,7 +50,7 @@ terminal() {
 }
 
 present_terminal() {
-  omari-launch-terminal-with-presentation "$@"
+  omari-launch-floating-terminal-with-presentation "$@"
 }
 
 open_in_editor() {

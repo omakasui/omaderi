@@ -4,4 +4,4 @@
 # Used by actions such as Update System.
 
 cmd="$*"
-xdg-terminal-exec bash -c "omari-show-logo; $cmd; if [ \$? -ne 130 ]; then omari-show-done; fi"
+exec setsid uwsm-app -- xdg-terminal-exec --app-id=org.omari.terminal --title=Omari -e bash -c "omari-show-logo; $cmd; if (( \$? != 130 )); then omari-show-done; fi"

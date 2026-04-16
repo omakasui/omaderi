@@ -1,0 +1,1 @@
+systemctl --user mask --now waybar.service

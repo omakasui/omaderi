@@ -23,15 +23,10 @@ esac
 desktop_path="/usr/share/applications/$desktop_id"
 
 # Install package
-if omari-pkg-install "$package"; then
-  # Set as default terminal
-  echo "Setting $package as new default terminal..."
-  omari-env-set TERMINAL "$package"
-
+if omari-pkg-add "$package"; then
   # Copy custom desktop entry for alacritty with X-TerminalArg* keys
   if [[ $package == "alacritty" ]]; then
     desktop_path="$OMARI_PATH/applications/desktop/Alacritty.desktop"
-
     mkdir -p ~/.local/share/applications
     cp "$desktop_path" ~/.local/share/applications/
   fi
@@ -40,10 +35,6 @@ if omari-pkg-install "$package"; then
   mkdir -p ~/.local/share/xdg-terminals ~/.local/share/applications
   cp "$desktop_path" "$HOME/.local/share/xdg-terminals/$desktop_id"
   cp "$desktop_path" "$HOME/.local/share/applications/$desktop_id"
-
-  # Delete existing config file if it exists
-  rm -f ~/.config/xdg-terminals.list
-  rm -f ~/.config/gnome-xdg-terminals.list
 
   # Create the current config file with only the selected terminal
   touch ~/.config/xdg-terminals.list

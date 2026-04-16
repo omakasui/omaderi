@@ -8,7 +8,7 @@ terminal_pid=$(niri msg --json windows |
   jq -r '
     .[]
     | select(.is_focused)
-    | .id
+    | .pid
   '
 )
 shell_pid=$(pgrep -P "$terminal_pid" | tail -n1)

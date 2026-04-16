@@ -7,8 +7,7 @@
 terminal_pid=$(niri msg --json windows |
   jq -r '
     .[]
-    | select(.focused)
-    | select(.app_id == "org.omari.terminal")
+    | select(.is_focused)
     | .id
   '
 )

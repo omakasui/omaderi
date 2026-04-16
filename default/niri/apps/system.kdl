@@ -1,0 +1,11 @@
+
+window-rule {
+  match app-id=r#"^org\.omari\.wiremix$"#
+  match app-id=r#"^org\.omari\.btop$"#
+  match app-id=r#"^org\.omari\.terminal$"#
+  match app-id=r#"^org\.omari\.bash$"#
+
+  open-floating true
+  default-column-width { fixed 875; }
+  default-window-height { fixed 600; }
+}

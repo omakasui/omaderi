@@ -2,4 +2,4 @@
 
 # Launch the fastfetch TUI that gives information about the current system.
 
-omari-launch-tui bash -c 'fastfetch; read -n 1 -s'
+exec omari-launch-or-focus-tui "bash -c 'fastfetch; read -n 1 -s'"

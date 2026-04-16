@@ -4,7 +4,6 @@ binds {
     Super+Alt+Return hotkey-overlay-title="Tmux" { spawn-sh "uwsm-app -- xdg-terminal-exec --dir=\"$(omari-cmd-terminal-cwd)\" bash -c \"tmux attach || tmux new -s Work\""; }
     Super+Shift+Return hotkey-overlay-title="Browser" { spawn "omari-launch-browser"; }
     Super+Shift+F hotkey-overlay-title="File Manager" { spawn-sh "uwsm-app -- nautilus --new-window"; }
-    Super+Alt+Shift+F hotkey-overlay-title="File Manager (cwd)" { spawn-sh "uwsm-app -- nautilus --new-window --dir=\"$(omari-cmd-terminal-cwd)\""; }
     Super+Shift+B hotkey-overlay-title="Browser" { spawn "omari-launch-browser"; }
-    Super+Alt+Shift+B hotkey-overlay-title="Browser (private)" { spawn "omari-launch-browser --private"; }
+    Super+Alt+Shift+B hotkey-overlay-title="Browser (private)" { spawn-sh "omari-launch-browser --private"; }
 }

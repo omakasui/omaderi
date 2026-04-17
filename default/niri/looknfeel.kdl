@@ -85,3 +85,8 @@ overview {
 
 // Use default window decorations.
 prefer-no-csd
+
+// Named workspaces
+workspace "1"
+workspace "2"
+workspace "3"

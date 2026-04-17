@@ -1,11 +1,19 @@
-
+// Floating windows
 window-rule {
   match app-id=r#"^org\.omari\.wiremix$"#
   match app-id=r#"^org\.omari\.btop$"#
   match app-id=r#"^org\.omari\.terminal$"#
   match app-id=r#"^org\.omari\.bash$"#
+  match app-id=r#"^org\.gnome\.NautilusPreviewer$"#
+  match app-id=r#"^org\.gnome\.Evince$"#
 
   open-floating true
   default-column-width { fixed 875; }
   default-window-height { fixed 600; }
+}
+
+window-rule {
+  match app-id=r#"^org\.gnome\.Calculator$"#
+
+  open-floating true
 }

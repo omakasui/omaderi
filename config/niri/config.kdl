@@ -12,6 +12,7 @@ include "../../.local/share/omari/default/niri/looknfeel.kdl"
 include "../../.local/share/omari/default/niri/input.kdl"
 include "../../.local/share/omari/default/niri/window.kdl"
 include "../../.local/share/omari/default/niri/apps/system.kdl"
+include "../../.local/share/omari/default/niri/apps/terminal.kdl"
 include "../omari/current/theme/niri.kdl"
 
 // Change your own setup in these files (and overwrite any settings from defaults!)

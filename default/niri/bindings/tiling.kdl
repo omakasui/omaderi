@@ -40,8 +40,8 @@ binds {
   Mod+0 { focus-workspace 10; }
 
   // Switch workspace down/up with SUPER + PageDown/PageUp
-  Mod+PageDown { focus-workspace-down; }
-  Mod+PageUp { focus-workspace-up; }
+  Mod+Page_Down { focus-workspace-down; }
+  Mod+Page_Up { focus-workspace-up; }
 
   // Move active window to a workspace with SUPER + SHIFT + [1-9; 0]
   Mod+Shift+1 { move-column-to-workspace 1; }
@@ -56,14 +56,14 @@ binds {
   Mod+Shift+0 { move-column-to-workspace 10; }
 
   // Move active window to workspace down/up with SUPER + SHIFT + PageDown/PageUp
-  Mod+Shift+PageDown { move-column-to-workspace-down; }
-  Mod+Shift+PageUp { move-column-to-workspace-up; }
+  Mod+Shift+Page_Down { move-column-to-workspace-down; }
+  Mod+Shift+Page_Up { move-column-to-workspace-up; }
 
   // Move windows to other monitors
-  Mod+Shift+Left { move-column-to-monitor-left;}
-  Mod+Shift+Right { move-column-to-monitor-right;}
-  Mod+Shift+Up { move-column-to-monitor-up;}
-  Mod+Shift+Down { move-column-to-monitor-down;}
+  Mod+Shift+Alt+Left { move-column-to-monitor-left;}
+  Mod+Shift+Alt+Right { move-column-to-monitor-right;}
+  Mod+Shift+Alt+Up { move-column-to-monitor-up;}
+  Mod+Shift+Alt+Down { move-column-to-monitor-down;}
 
   // Scroll to switch workspaces
   Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }

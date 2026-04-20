@@ -15,8 +15,5 @@ echo '[[ -f ~/.bashrc ]] && . ~/.bashrc' | tee ~/.bash_profile >/dev/null
 
 $(bash $OMARI_PATH/install/config/theme.sh)
 
-omari-refresh-gnome
-omari-refresh-keybindings
-omari-refresh-gdm
-omari-refresh-plymouth
+#omari-refresh-plymouth
 omari-setup-nvim

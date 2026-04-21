@@ -150,7 +150,8 @@ show_background_menu() {
 }
 
 show_setup_menu() {
-  case $(menu "Setup" "󰤆  System Sleep\n  Keybindings") in
+  case $(menu "Setup" "󰂯  Bluetooth\n󰤆  System Sleep\n  Keybindings") in
+  *Bluetooth*) omari-launch-bluetooth ;;
   *System*) show_setup_system_menu ;;
   *Keybindings*) open_in_editor ~/.config/niri/bindings.kdl ;;
   *) show_main_menu ;;
@@ -437,8 +438,9 @@ show_update_process_menu() {
 }
 
 show_update_hardware_menu() {
-  case $(menu "Restart" "  Audio") in
+  case $(menu "Restart" "  Audio\n󰂯  Bluetooth") in
   *Audio*) present_terminal omari-restart-pipewire ;;
+  *Bluetooth*) present_terminal omari-restart-bluetooth ;;
   *) show_update_menu ;;
   esac
 }

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Launch the Omari bluetooth controls TUI (provided by bluetui).
+# Also attempts to unblock bluetooth service if rfkill had blocked it.
+
+rfkill unblock bluetooth
+exec omari-launch-or-focus-tui bluetui

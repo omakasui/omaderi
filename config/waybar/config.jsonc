@@ -91,6 +91,7 @@
     "format-connected": "󰂱",
     "format-no-controller": "",
     "tooltip-format": "Devices connected: {num_connections}",
+    "on-click": "omari-launch-bluetooth",
   },
   "pulseaudio": {
     "format": "{icon}",

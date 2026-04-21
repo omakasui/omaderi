@@ -18,13 +18,17 @@ binds {
   Mod+Alt+Comma hotkey-overlay-title="Invoke last notification" { spawn-sh "makoctl invoke"; }
   Mod+Shift+Alt+Comma hotkey-overlay-title="Restore last notification" { spawn-sh "makoctl restore"; }
 
-  // Lockscreen
-  Super+Ctrl+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
-
   // Captures
   Print { screenshot; }
   Ctrl+Print { screenshot-screen; }
   Alt+Print { screenshot-window; }
+
+  // Control panels
+  Mod+Ctrl+B hotkey-overlay-title="Bluetooth controls" { spawn "omari-launch-bluetooth"; }
+  Mod+Ctrl+T hotkey-overlay-title="Activity" { spawn-sh "omari-launch-tui btop"; }
+
+  // Lockscreen
+  Super+Ctrl+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
 
   // Overview
   Mod+O repeat=false { toggle-overview; }

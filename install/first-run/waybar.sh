@@ -1,2 +1,2 @@
-# waybar.service masking is now done during installation (install/config/config.sh).
+# waybar.service masking is done during installation via symlink (install/config/waybar.sh).
 # Nothing to do here at first-run.

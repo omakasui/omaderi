@@ -14,4 +14,5 @@ run_logged $OMARI_INSTALL/config/waybar.sh
 run_logged $OMARI_INSTALL/config/fast-shutdown.sh
 run_logged $OMARI_INSTALL/config/sudoless-asdcontrol.sh
 
+run_logged $OMARI_INSTALL/config/hardware/network.sh
 run_logged $OMARI_INSTALL/config/hardware/fix-fkeys.sh

@@ -45,7 +45,9 @@ gvfs-backends
 
 imagemagick
 initramfs-tools
+impala
 imv
+iwd
 
 jq
 

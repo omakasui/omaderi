@@ -14,5 +14,6 @@ if [[ -f $FIRST_RUN_MODE ]]; then
   sudo rm -f /etc/sudoers.d/first-run
 
   bash "$OMARI_PATH/install/first-run/welcome.sh"
+  bash "$OMARI_PATH/install/first-run/wifi.sh"
   rm -f "$FIRST_RUN_MODE"
 fi

@@ -150,7 +150,9 @@ show_background_menu() {
 }
 
 show_setup_menu() {
-  case $(menu "Setup" "󰂯  Bluetooth\n󰤆  System Sleep\n  Keybindings") in
+  case $(menu "Setup" "  Audio\n  Wifi\n󰂯  Bluetooth\n󰤆  System Sleep\n  Keybindings") in
+  *Audio*) omari-launch-audio ;;
+  *Wifi*) omari-launch-wifi ;;
   *Bluetooth*) omari-launch-bluetooth ;;
   *System*) show_setup_system_menu ;;
   *Keybindings*) open_in_editor ~/.config/niri/bindings.kdl ;;

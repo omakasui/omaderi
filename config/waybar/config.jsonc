@@ -65,6 +65,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
+    "on-click": "omari-launch-wifi",
   },
   "battery": {
     "format": "{capacity}% {icon}",

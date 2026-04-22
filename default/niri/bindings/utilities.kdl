@@ -24,7 +24,9 @@ binds {
   Alt+Print { screenshot-window; }
 
   // Control panels
+  Mod+Ctrl+A hotkey-overlay-title="Audio controls" { spawn "omari-launch-audio"; }
   Mod+Ctrl+B hotkey-overlay-title="Bluetooth controls" { spawn "omari-launch-bluetooth"; }
+  Mod+Ctrl+W hotkey-overlay-title="Wifi controls" { spawn "omari-launch-wifi"; }
   Mod+Ctrl+T hotkey-overlay-title="Activity" { spawn-sh "omari-launch-tui btop"; }
 
   // Lockscreen

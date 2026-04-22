@@ -1,6 +1,7 @@
 // Floating windows
 window-rule {
   match app-id=r#"^org\.omari\.bluetui$"#
+  match app-id=r#"^org\.omari\.impala$"#
   match app-id=r#"^org\.omari\.wiremix$"#
   match app-id=r#"^org\.omari\.btop$"#
   match app-id=r#"^org\.omari\.terminal$"#

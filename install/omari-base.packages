@@ -97,6 +97,7 @@ ripgrep
 slurp
 starship
 system-config-printer
+systemd-resolved
 swaylock
 swaybg
 swayidle

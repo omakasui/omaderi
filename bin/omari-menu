@@ -418,9 +418,7 @@ show_update_channel_menu() {
 }
 
 show_update_config_menu() {
-  case $(menu "Use default config" "  Gnome\n󰍂  GDM\n  Keybindings\n󱣴  Plymouth\n  Starship\n  Tmux\n󰌧  Walker") in
-  *Gnome*) present_terminal omari-refresh-gnome ;;
-  *GDM*) present_terminal omari-refresh-gdm ;;
+  case $(menu "Use default config" "  Keybindings\n󱣴  Plymouth\n  Starship\n  Tmux\n󰌧  Walker") in
   *Keybindings*) present_terminal omari-refresh-keybindings ;;
   *Plymouth*) present_terminal omari-refresh-plymouth ;;
   *Starship*) present_terminal omari-refresh-config starship.toml ;;

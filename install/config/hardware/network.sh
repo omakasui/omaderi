@@ -89,8 +89,14 @@ for p in /sys/class/net/*/wireless; do
   sudo systemctl mask "wpa_supplicant@${iface}.service" 2>/dev/null || true
 done
 
+sudo systemctl unmask iwd
 sudo systemctl enable iwd
-sudo systemctl enable systemd-resolved
+
+# systemd-resolved is a separate package on Debian — only enable if installed.
+if systemctl cat systemd-resolved &>/dev/null; then
+  sudo systemctl unmask systemd-resolved
+  sudo systemctl enable systemd-resolved
+fi
 
 sudo systemctl disable systemd-networkd-wait-online.service 2>/dev/null || true
 sudo systemctl mask systemd-networkd-wait-online.service

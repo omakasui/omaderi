@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Toggle microphone mute. Dell XPS and ThinkPad systems get special handling for the hardware LED.
+
+if omari-hw-match "XPS"; then
+  omari-cmd-mic-mute-xps
+elif omari-hw-match "ThinkPad"; then
+  omari-cmd-mic-mute-thinkpad
+else
+  omari-swayosd-client --input-volume mute-toggle
+fi

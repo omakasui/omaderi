@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Print the name of the currently focused Niri monitor.
+
+niri msg --json monitors | jq -r '.[] | select(.focused) | .name'

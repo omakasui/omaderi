@@ -1,4 +1,4 @@
-# Write iwd main config - always overwrite to guarantee EnableNetworkConfiguration.
+# Write iwd main config
 sudo mkdir -p /etc/iwd
 sudo tee /etc/iwd/main.conf > /dev/null << 'EOF'
 [General]
@@ -10,7 +10,7 @@ EOF
 
 sudo mkdir -p /var/lib/iwd
 
-# Migrate wifi credentials from /etc/network/interfaces to iwd PSK profiles.
+# Migrate wifi credentials from /etc/network/interfaces to iwd PSK profiles
 _write_iwd_profile() {
   local ssid="$1" psk="$2" profile
 
@@ -20,67 +20,57 @@ _write_iwd_profile() {
     profile="/var/lib/iwd/=$(printf '%s' "$ssid" | od -A n -t x1 | tr -d ' \n').psk"
   fi
 
-  if [[ "$psk" =~ ^[0-9a-fA-F]{64}$ ]]; then
-    printf '[Security]\nPreSharedKey=%s\n\n[Settings]\nAutoConnect=true\n' "$psk"
-  else
-    printf '[Security]\nPassphrase=%s\n\n[Settings]\nAutoConnect=true\n' "$psk"
-  fi | sudo tee "$profile" > /dev/null
+  {
+    printf '%s\n' "[Security]"
+    if [[ "$psk" =~ ^[0-9a-fA-F]{64}$ ]]; then
+      printf '%s\n' "PreSharedKey=${psk}"
+    else
+      printf '%s\n' "Passphrase=${psk}"
+    fi
+    printf '%s\n' "" "[Settings]" "AutoConnect=true"
+  } | sudo tee "$profile" > /dev/null
 
   sudo chmod 600 "$profile"
   echo "Migrated: $ssid -> $profile"
 }
 
 if [[ -f /etc/network/interfaces ]]; then
-  ssid=""; psk=""
+  ssid=$(sudo sed -n 's/^[[:space:]]*wpa-ssid[[:space:]]\+//p' /etc/network/interfaces | head -n1)
+  psk=$(sudo sed -n 's/^[[:space:]]*wpa-psk[[:space:]]\+//p' /etc/network/interfaces | head -n1)
 
-  # FIX: Use proper regex for stanza detection
-  # In Bash, [[ =~ ]] uses ERE. [^[:space:]] does NOT work as expected!
-  # Use explicit check: line starts with non-space and non-# character
-  while IFS= read -r line || [[ -n "$line" ]]; do
-    # Detect new stanza: line starts with a letter (not space/tab/#)
-    if [[ "$line" =~ ^[a-zA-Z] ]]; then
-      [[ -n "$ssid" && -n "$psk" ]] && _write_iwd_profile "$ssid" "$psk"
-      ssid=""; psk=""
-    fi
+  ssid="${ssid#\"}"; ssid="${ssid%\"}"
 
-    if [[ "$line" =~ ^[[:space:]]+wpa-ssid[[:space:]]+\"([^\"]+)\" ]]; then
-      ssid="${BASH_REMATCH[1]}"
-    elif [[ "$line" =~ ^[[:space:]]+wpa-ssid[[:space:]]+([^[:space:]#]+) ]]; then
-      ssid="${BASH_REMATCH[1]}"
-    elif [[ "$line" =~ ^[[:space:]]+wpa-psk[[:space:]]+([^[:space:]#]+) ]]; then
-      psk="${BASH_REMATCH[1]}"
-    fi
-  done < /etc/network/interfaces
-
-  # Flush final profile
-  [[ -n "$ssid" && -n "$psk" ]] && _write_iwd_profile "$ssid" "$psk"
+  if [[ -n "$ssid" && -n "$psk" ]]; then
+    _write_iwd_profile "$ssid" "$psk"
+  fi
 fi
 
-# Remove wifi interfaces from /etc/network/interfaces to prevent conflicts with iwd.
-wifi_ifaces=()
+# Identify wifi interfaces
+wifi_ifaces=""
 for p in /sys/class/net/*/wireless; do
   [[ -d "$p" ]] || continue
   iface="${p%/wireless}"
   iface="${iface##*/}"
-  wifi_ifaces+=("$iface")
+  wifi_ifaces="$wifi_ifaces $iface"
 done
 
-if [[ -f /etc/network/interfaces && ${#wifi_ifaces[@]} -gt 0 ]]; then
-  # Single-pass awk: remove all wifi stanzas at once
-  awk_script='BEGIN { for(i=1;i<=ARGC;i++) w[ARGV[i]]=1; ARGC=1 }
+# Remove wifi stanzas from /etc/network/interfaces
+if [[ -f /etc/network/interfaces && -n "$wifi_ifaces" ]]; then
+  sudo cp /etc/network/interfaces /etc/network/interfaces.bak
+
+  sudo awk -v list="$wifi_ifaces" '
+    BEGIN { split(list, a); for(i in a) w[a[i]]=1 }
     /^(allow-hotplug|auto)[[:space:]]/ { if(w[$2]) next }
     /^iface[[:space:]]/ { skip=(w[$2]?1:0); if(skip) next }
     skip && (/^[[:space:]]/ || /^$/) { next }
-    { skip=0; print }'
-
-  sudo awk "$awk_script" /etc/network/interfaces "${wifi_ifaces[@]}" | \
-    sudo tee /etc/network/interfaces.tmp > /dev/null
+    { skip=0; print }
+  ' /etc/network/interfaces | sudo tee /etc/network/interfaces.tmp > /dev/null
   sudo mv /etc/network/interfaces.tmp /etc/network/interfaces
 fi
 
-# Disable wpa_supplicant and mask all related services to prevent conflicts with iwd.
+# Disable wpa_supplicant
 sudo systemctl disable wpa_supplicant 2>/dev/null || true
-sudo systemctl mask wpa_supplicant
+sudo systemctl mask wpa_supplicant 2>/dev/null || true
 
 for p in /sys/class/net/*/wireless; do
   [[ -d "$p" ]] || continue
@@ -89,14 +79,19 @@ for p in /sys/class/net/*/wireless; do
   sudo systemctl mask "wpa_supplicant@${iface}.service" 2>/dev/null || true
 done
 
-sudo systemctl unmask iwd
-sudo systemctl enable iwd
+# Enable iwd
+sudo systemctl unmask iwd 2>/dev/null || true
+sudo systemctl enable iwd 2>/dev/null || true
 
-# systemd-resolved is a separate package on Debian — only enable if installed.
+# Enable resolved only if installed
 if systemctl cat systemd-resolved &>/dev/null; then
-  sudo systemctl unmask systemd-resolved
-  sudo systemctl enable systemd-resolved
+  sudo systemctl unmask systemd-resolved 2>/dev/null || true
+  sudo systemctl enable systemd-resolved 2>/dev/null || true
+
+  if [[ -L /etc/resolv.conf ]] || [[ -f /etc/resolv.conf ]]; then
+    sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf 2>/dev/null || true
+  fi
 fi
 
 sudo systemctl disable systemd-networkd-wait-online.service 2>/dev/null || true
-sudo systemctl mask systemd-networkd-wait-online.service
+sudo systemctl mask systemd-networkd-wait-online.service 2>/dev/null || true

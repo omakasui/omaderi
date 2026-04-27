@@ -43,7 +43,12 @@ else
   # Set new background symlink
   ln -nsf "$NEW_BACKGROUND" "$CURRENT_BACKGROUND_LINK"
 
+  # Create a blurred version of the background
+  NEW_BLURRED_BACKGROUND="$HOME/.config/omari/current/background-blurred.jpg"
+  convert "$NEW_BACKGROUND" -blur 0x15 "$NEW_BLURRED_BACKGROUND"
+
  # Relaunch swaybg
   pkill -x swaybg
   setsid uwsm-app -- swaybg -i "$CURRENT_BACKGROUND_LINK" -m fill >/dev/null 2>&1 &
+  setsid uwsm-app -- swaybg -i "$NEW_BLURRED_BACKGROUND" -m fill -n backdrop >/dev/null 2>&1 &
 fi

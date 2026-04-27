@@ -16,8 +16,8 @@ include "../../.local/share/omari/default/niri/apps/terminal.kdl"
 include "../omari/current/theme/niri.kdl"
 
 // Change your own setup in these files (and overwrite any settings from defaults!)
-include "output.kdl"
-include "input.kdl"
-include "bindings.kdl"
+include optional=true "output.kdl"
+include optional=true "input.kdl"
+include optional=true "bindings.kdl"
 
 // Add any other personal Niri configuration below

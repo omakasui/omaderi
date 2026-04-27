@@ -4,7 +4,7 @@ spawn-sh-at-startup "uwsm-app -- fcitx5 --disable notificationitem"
 spawn-sh-at-startup "uwsm-app -- swaybg -i ~/.config/omari/current/background -m fill"
 spawn-sh-at-startup "uwsm-app -- swaybg -i ~/.config/omari/current/background -m fill -n backdrop"
 spawn-at-startup "/usr/libexec/polkit-mate-authentication-agent-1"
-spawn-at-startup "omari-first-run"
+spawn-at-startup "omari-cmd-first-run"
 
 // Skip the hotkey overlay at startup.
 hotkey-overlay {

@@ -1,6 +1,10 @@
 window-rule {
     opacity 0.97
     draw-border-with-background false
+
+    background-effect {
+        blur true
+    }
 }
 
 // The screenshot-path option specifies where screenshots taken with the "Take Screenshot" action in the hotkey overlay are saved. You can use strftime format specifiers to include the date and time in the filename.

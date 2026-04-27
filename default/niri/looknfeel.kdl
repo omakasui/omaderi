@@ -83,6 +83,14 @@ overview {
     zoom 0.5
 }
 
+// Blue effect
+blur {
+    passes 2
+    offset 2
+    noise 0.1
+    saturation 1.2
+}
+
 // Use default window decorations.
 prefer-no-csd
 

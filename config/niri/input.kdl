@@ -8,12 +8,12 @@ input {
         xkb {
             options "compose:caps"
 
-            repeat-delay 250
-            repeat-rate 40
-
             // Put your XKB options here
             // Leave it empty to use the default options, which are a good starting point for most users.
         }
+
+        repeat-delay 250
+        repeat-rate 40
     }
 
     touchpad {

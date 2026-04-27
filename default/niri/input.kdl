@@ -4,6 +4,10 @@ input {
     keyboard {
         xkb {
             // Leave it empty to use the default options
+            options "compose:caps"
+
+            repeat-delay 250
+            repeat-rate 40
         }
 
         // Enable numlock on startup, omitting this setting disables it.
@@ -12,6 +16,7 @@ input {
 
     touchpad {
         tap
+        scroll-factor 0.4
         // Put your touchpad settings here
     }
 

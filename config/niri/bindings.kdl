@@ -6,4 +6,10 @@ binds {
     Super+Shift+F hotkey-overlay-title="File Manager" { spawn-sh "uwsm-app -- nautilus --new-window"; }
     Super+Shift+B hotkey-overlay-title="Browser" { spawn "omari-launch-browser"; }
     Super+Alt+Shift+B hotkey-overlay-title="Browser (private)" { spawn-sh "omari-launch-browser --private"; }
+
+    // Add extra bindings
+    // Super+Shift+R hotkey-overlay-title="Run SSH Server" { spawn-sh "alacritty -e ssh your-server"; }
+
+    // Overwrite existing bindings, like putting Omari Menu on Super + Space
+    // Super+Space hotkey-overlay-title="Omari Menu" { spawn "omari-menu"; }
 }

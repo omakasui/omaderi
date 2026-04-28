@@ -1,0 +1,80 @@
+// Settings that influence how windows are positioned and sized.
+// Find more information on the wiki:
+// https://niri-wm.github.io/niri/Configuration:-Layout
+
+layout {
+    // No gaps between windows or borders
+    // gaps 0
+
+
+    // Change the default window arrangement
+    // center-focused-column "always"
+
+    // You can customize the widths that "switch-preset-column-width"
+    // preset-column-widths {
+        // Proportion sets the width as a fraction of the output width, taking gaps into account.
+        // For example, you can perfectly fit four windows sized "proportion 0.25" on an output.
+        // The default preset widths are 1/3, 1/2 and 2/3 of the output.
+        // proportion 0.33333
+        // proportion 0.5
+        // proportion 0.66667
+
+        // Fixed sets the width in logical pixels exactly.
+        // fixed 1920
+    //}
+
+    // You can also customize the heights that "switch-preset-window-height" (Mod+Ctrl+Shift+R) toggles between.
+    // preset-window-heights { }
+
+    // You can change the default width of the new windows.
+    // default-column-width { proportion 0.5; }
+    // If you leave the brackets empty, the windows themselves will decide their initial width.
+    // default-column-width {}
+
+
+    // You can change how the focus ring looks.
+    focus-ring {
+        // Uncomment this line to disable the focus ring.
+        off
+
+        // How many logical pixels the ring extends out from the windows.
+        // width 4
+    }
+
+    // You can also add a border. It's similar to the focus ring, but always visible.
+    border {
+        // The settings are the same as for the focus ring.
+        // If you enable the border, you probably want to disable the focus ring.
+        // off
+    }
+
+    // You can enable drop shadows for windows.
+    shadow {
+        // Uncomment the next line to enable shadows.
+        // on
+
+        // You can change how shadows look. The values below are in logical
+        // pixels and match the CSS box-shadow properties.
+
+        // // Softness controls the shadow blur radius.
+        // softness 30
+
+        // // Spread expands the shadow.
+        // spread 5
+
+        // // Offset moves the shadow relative to the window.
+        // offset x=0 y=5
+
+        // // You can also change the shadow color and opacity.
+        // color "#0007"
+    }
+
+    // Struts shrink the area occupied by windows, similarly to layer-shell panels.
+    // You can think of them as a kind of outer gaps. They are set in logical pixels.
+    struts {
+        // left 64
+        // right 64
+        // top 64
+        // bottom 64
+    }
+}

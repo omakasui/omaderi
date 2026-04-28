@@ -35,7 +35,7 @@ Rectangle {
         width: parent.width
 
         Image {
-            source: "logo.svg"
+            source: Qt.resolvedUrl("logo.svg")
             width: root.width * 0.35
             height: Math.round(width * sourceSize.height / sourceSize.width)
             fillMode: Image.PreserveAspectFit
@@ -75,7 +75,7 @@ Rectangle {
                     color: "#ffffff"
                     focus: true
 
-                    Keys.onPressed: {
+                    Keys.onPressed: function(event) {
                         if (event.key === Qt.Key_Return || event.key === Qt.Key_Enter) {
                             sddm.login(root.currentUser, password.text, root.sessionIndex)
                             event.accepted = true

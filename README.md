@@ -9,7 +9,7 @@ Omari is an Opinionated Debian and Niri setup.
 To install Omari, simply run the following command in your terminal:
 
 ```bash
-curl -sSL https://omakasui.org/omari | bash
+curl -fsSL https://omakasui.org/omari | bash
 ```
 
 ## License

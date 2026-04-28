@@ -6,25 +6,41 @@ input {
     //
     keyboard {
         xkb {
+            // Use multiple keyboard layouts and switch between them with Left Alt + Right Alt
+            // layout = us,dk,eu
+
+            // Use a specific keyboard variant if needed (e.g. intl for international keyboards)
+            // variant = intl
+
             options "compose:caps"
+
+            // Start with numlock on by default
+            numlock
 
             // Put your XKB options here
             // Leave it empty to use the default options, which are a good starting point for most users.
         }
 
+        // Change speed of keyboard repeat
         repeat-delay 250
         repeat-rate 40
     }
 
     touchpad {
+        // Enable tap to click, which allows you to tap the touchpad to perform a click instead of pressing down on it.
+        tap
+
+        // Control the speed of your scrolling
         scroll-factor 0.4
+
+        // Put your touchpad settings here
     }
 
     mouse {
-        //
+        // Put your mouse settings here
     }
 
     trackpoint {
-        //
+        // Put your trackpoint settings here
     }
 }

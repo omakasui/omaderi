@@ -3,26 +3,12 @@ input {
     //
     keyboard {
         xkb {
-            // Leave it empty to use the default options
+            // layout "us"
+            // variant ""
+            // model ""
             options "compose:caps"
+            // rules ""
         }
-
-        // Enable numlock on startup, omitting this setting disables it.
-        numlock
-    }
-
-    touchpad {
-        tap
-        scroll-factor 0.4
-        // Put your touchpad settings here
-    }
-
-    mouse {
-        // Put your mouse settings here
-    }
-
-    trackpoint {
-        // Put your trackpoint settings here
     }
 
     // Enable focus follows mouse, which focuses windows when the mouse cursor enters them.

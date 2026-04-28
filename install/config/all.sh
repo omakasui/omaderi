@@ -1,10 +1,11 @@
 run_logged $OMARI_INSTALL/config/config.sh
 run_logged $OMARI_INSTALL/config/user-dirs.sh
 run_logged $OMARI_INSTALL/config/theme.sh
-run_logged $OMARI_INSTALL/config/git.sh
 run_logged $OMARI_INSTALL/config/branding.sh
+run_logged $OMARI_INSTALL/config/git.sh
 run_logged $OMARI_INSTALL/config/ssh-flakiness.sh
 run_logged $OMARI_INSTALL/config/increase-file-watchers.sh
+run_logged $OMARI_INSTALL/config/detect-keyboard-layout.sh
 run_logged $OMARI_INSTALL/config/xcompose.sh
 run_logged $OMARI_INSTALL/config/mise-work.sh
 run_logged $OMARI_INSTALL/config/mimetypes.sh

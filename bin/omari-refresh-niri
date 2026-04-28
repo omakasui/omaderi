@@ -7,3 +7,5 @@ omari-refresh-config niri/config.kdl
 omari-refresh-config niri/input.kdl
 omari-refresh-config niri/output.kdl
 omari-refresh-config niri/bindings.kdl
+omari-refresh-config niri/looknfeel.kdl
+omari-refresh-config niri/autostart.kdl

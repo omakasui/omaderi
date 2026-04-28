@@ -14,12 +14,12 @@ input {
 
             options "compose:caps"
 
-            // Start with numlock on by default
-            numlock
-
             // Put your XKB options here
             // Leave it empty to use the default options, which are a good starting point for most users.
         }
+
+        // Start with numlock on by default
+        numlock
 
         // Change speed of keyboard repeat
         repeat-delay 250

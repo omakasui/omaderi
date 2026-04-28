@@ -91,6 +91,8 @@ plymouth-themes
 polkitd
 printer-driver-cups-pdf
 
+qt6-svg-plugins
+
 rfkill
 ripgrep
 

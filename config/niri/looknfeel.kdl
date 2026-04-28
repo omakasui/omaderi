@@ -49,7 +49,7 @@ layout {
     }
 
     // You can enable drop shadows for windows.
-    shadow {
+    //shadow {
         // Uncomment the next line to enable shadows.
         // on
 
@@ -67,14 +67,14 @@ layout {
 
         // // You can also change the shadow color and opacity.
         // color "#0007"
-    }
+    //}
 
     // Struts shrink the area occupied by windows, similarly to layer-shell panels.
     // You can think of them as a kind of outer gaps. They are set in logical pixels.
-    struts {
+    //struts {
         // left 64
         // right 64
         // top 64
         // bottom 64
-    }
+    //}
 }
